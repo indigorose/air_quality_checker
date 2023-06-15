@@ -1,6 +1,10 @@
-import './App.css';
 import React, { useState } from 'react';
 import CitySearch from './CitySearch';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import AirQualityCard from './AirQualityCard';
+import PollutantInfo from './PollutantInfo';
+import AirQualityLevels from './AirQualityLevels';
 
 function App() {
 	// Everything must happen inside the function.
@@ -37,9 +41,21 @@ function App() {
 	};
 	return (
 		<div className="container">
-			<h1>Air Quality Index Checker</h1>
+			<h1 className="mt-5 mb-3">Air Quality Index Checker</h1>
 			{/* This component will call the information from the API and we are passing the getAirQuality as its props(property) */}
 			<CitySearch getAirQuality={getAirQuality} />
+			{error && (
+				<div className="alert alert-danger" role="alert">
+					{error}
+				</div>
+			)}
+			{airQualityData && (
+				<>
+					<AirQualityCard data={airQualityData} />
+					<PollutantInfo pollutant={airQualityData.dominentpol} />
+				</>
+			)}
+			<AirQualityLevels />
 		</div>
 	);
 }

@@ -1,3 +1,15 @@
 .App {
 	text-align: center;
 }
+
+.bg-orange {
+	background-color: #ffa500;
+}
+
+.bg-very-unhealthy {
+	background-color: #800080;
+}
+
+.bg-hazardous {
+	background-color: #7e0023;
+}

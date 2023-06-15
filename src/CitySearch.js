@@ -14,13 +14,16 @@ const CitySearch = ({ getAirQuality }) => {
 	};
 
 	return (
-		<form action="" onSubmit={handleSearch}>
+		<form className="mb-4" onSubmit={handleSearch}>
 			<input
 				type="text"
 				placeholder="Enter city here..."
 				onChange={handleInputChange}
+				className="form-control"
 			/>
-			<button type="submit">Search</button>
+			<button className="btn btn-primary mt-3" type="submit">
+				Search
+			</button>
 		</form>
 	);
 };
