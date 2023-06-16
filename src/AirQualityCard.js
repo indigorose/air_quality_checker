@@ -26,6 +26,9 @@ function AirQualityCard({ data }) {
 				<h5 className="card-title mb-2">{city.name}</h5>
 				<h6 className="card-subtitle mb-2">Air Quality Index: {aqi}</h6>
 				<p className="card-text">Dominant Pollutant: {dominentpol}</p>
+				<p className="card-text">
+					Location: {city.geo[0]}, {city.geo[1]}
+				</p>
 				<p className="card-text">Last Updated: {time.s}</p>
 			</div>
 		</div>

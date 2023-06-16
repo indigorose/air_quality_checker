@@ -5,6 +5,7 @@ import './App.css';
 import AirQualityCard from './AirQualityCard';
 import PollutantInfo from './PollutantInfo';
 import AirQualityLevels from './AirQualityLevels';
+import CityLocationMap from './CityLocationMap';
 
 function App() {
 	// Everything must happen inside the function.
@@ -53,6 +54,10 @@ function App() {
 				<>
 					<AirQualityCard data={airQualityData} />
 					<PollutantInfo pollutant={airQualityData.dominentpol} />
+					<CityLocationMap
+						location={airQualityData.city.geo}
+						city={airQualityData.city.name}
+					/>
 				</>
 			)}
 			<AirQualityLevels />
