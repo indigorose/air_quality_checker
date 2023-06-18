@@ -1,6 +1,6 @@
 # Air Quality Checker App
 
-A React app built with the Air Quality Programmatic APIs from [World Air Quality Index Project]() and styled using Bootstrap CSS.
+A React [app](https://air-quality-index-checker-appkr.netlify.app/) built with the Air Quality Programmatic APIs from [World Air Quality Index Project](https://aqicn.org/here/) and styled using Bootstrap CSS.
 
 To use the app, search any city in the world to request an API response and provide the air quality of the city, listing information on the main pollutant and a table on the level of health concern based on the AQI levels.
 
