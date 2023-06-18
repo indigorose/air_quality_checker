@@ -1,3 +1,19 @@
+# Air Quality Checker App
+
+A React app built with the Air Quality Programmatic APIs from [World Air Quality Index Project]() and styled using Bootstrap CSS.
+
+To use the app, search any city in the world to request an API response and provide the air quality of the city, listing information on the main pollutant and a table on the level of health concern based on the AQI levels.
+
+## Screenshots
+
+<img align="center" alt="Main App" height="500" src="./src/assets/images/Screenshot.png" width="500"/>
+
+<img align="center" alt="Gif Version" height="500" src="./src/assets/images/AQCA.gif" width="500"/>
+
+## Pending Improvements
+
+I hope to make further amendments, adding map and weather API configurations as well further Bootstrap and CSS styling.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

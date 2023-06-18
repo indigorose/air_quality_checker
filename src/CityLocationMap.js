@@ -2,8 +2,8 @@ import React from 'react';
 
 function CityLocationMap({ location, city }) {
 	// Create a function that will display a static map of the location requested.
-	const longitude = location[1].toFixed(4);
-	const latitude = location[0].toFixed(4);
+	// const longitude = location[1].toFixed(4);
+	// const latitude = location[0].toFixed(4);
 	// // eslint-disable-next-line no-unused-vars
 	// const [mapData, setMapData] = useState(null);
 	// // eslint-disable-next-line no-unused-vars
@@ -34,12 +34,12 @@ function CityLocationMap({ location, city }) {
 	// };
 
 	return (
-		<div className="card mb-4">
-			<div className="card-body">
-				<h4 className="card-title">{city}</h4>
+		<div className="">
+			<div className="">
+				{/* <h4 className="card-title">{city}</h4>
 				<p>
 					Longitude: {longitude}, Latitude: {latitude}
-				</p>
+				</p> */}
 				{/* <img
 					src={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${longitude},${latitude},12,0/600x400?access_token=${process.env.REACT_APP_MAP_API_TOKEN}`}
 					alt=""
