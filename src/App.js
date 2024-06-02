@@ -22,6 +22,7 @@ function App() {
 			const response = await fetch(
 				`https://api.waqi.info/feed/${city}/?token=${process.env.REACT_APP_AIR_API_TOKEN}`
 			);
+			// TODO - fix api request
 			const data = await response.json();
 			console.log(data);
 			if (response.ok && data.status === 'ok') {
