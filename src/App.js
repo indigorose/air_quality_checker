@@ -20,28 +20,30 @@ function App() {
 	const getAirQuality = async (city) => {
 		try {
 			const response = await fetch(
-				`https://api.waqi.info/feed/${city}/?token=${process.env.REACT_APP_AIR_API_TOKEN}`
+				`/.netlify/functions/getData?city=${city}`
 			);
 
+			const contentType = response.headers.get('content-type');
+			if (!contentType || !contentType.includes('application/json')) {
+				throw new Error(`Expected JSON, got: ${contentType}`);
+			}
+
 			const data = await response.json();
-			console.log(data);
-			if (response.ok && data.status === 'ok') {
-				setAirQualityData(data.data);
+
+			if (response.ok && data) {
+				setAirQualityData(data);
 				setError(null);
 			} else {
-				setError(
-					"Sorry, we couldn't find the city you were looking for. Try another location nearby or ensure your spelling is correct."
-				);
-				console.error('API error: ', data);
+				setError("Couldn't fetch data. Try again.");
 				setAirQualityData(null);
 			}
 		} catch (error) {
-			// We need to catch errors as things happen outside of our control
 			console.error('network error: ', error);
 			setError('Sorry, something went wrong.');
 			setAirQualityData(null);
 		}
 	};
+
 	return (
 		<div className="container">
 			<h1 className="mt-5 mb-3">Air Quality Index Checker</h1>
