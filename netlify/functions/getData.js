@@ -1,6 +1,9 @@
 const fetch = require('node-fetch');
 
 exports.handler = async function (event, context) {
+	console.log('Function triggered!');
+	console.log('Query params:', event.queryStringParameters);
+	console.log('Token present:', !!process.env.AIR_API_TOKEN);
 	const { city } = event.queryStringParameters;
 	const API_KEY = process.env.AIR_API_TOKEN;
 

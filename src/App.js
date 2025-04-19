@@ -19,16 +19,21 @@ function App() {
 	// Using the Async functionality allows for a better communication with external API sources.
 	const getAirQuality = async (city) => {
 		try {
-			const response = await fetch(
-				`/.netlify/functions/getData?city=${city}`
-			);
+			const baseUrl =
+				process.env.NODE_ENV === 'development'
+					? '/.netlify/functions'
+					: 'https://air-quality-index-checker-appkr.netlify.app/.netlify/functions';
 
+			const response = await fetch(`${baseUrl}/getData?city=${city}`);
 			const contentType = response.headers.get('content-type');
 			if (!contentType || !contentType.includes('application/json')) {
+				const rawText = await response.text();
+				console.error('Got HTML instead of JSON:', rawText);
 				throw new Error(`Expected JSON, got: ${contentType}`);
 			}
 
 			const data = await response.json();
+			console.log('received data: ', data);
 
 			if (response.ok && data) {
 				setAirQualityData(data);
