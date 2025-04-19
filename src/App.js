@@ -32,6 +32,7 @@ function App() {
 				setError(
 					"Sorry, we couldn't find the city you were looking for. Try another location nearby or ensure your spelling is correct."
 				);
+				console.error('API error: ', data);
 				setAirQualityData(null);
 			}
 		} catch (error) {
@@ -62,10 +63,10 @@ function App() {
 				</>
 			)}
 			<AirQualityLevels />
-			<img
+			{/* <img
 			// src={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.4196,37.776,11.41,0/300x200?access_token=${process.env.REACT_APP_MAP_API_TOKEN}`}
 			// alt=""
-			/>
+			/> */}
 		</div>
 	);
 }
